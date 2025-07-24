@@ -37,6 +37,7 @@ import {
   Share,
   Coins,
   ArrowRight,
+  PenTool,
 } from "lucide-react"
 
 interface CoSigner {
@@ -58,6 +59,8 @@ export default function DocumentViewPage({ params }: { params: { id: string } })
   const [newSignerRole, setNewSignerRole] = useState("")
   const [inviteMessage, setInviteMessage] = useState("")
   const [isInviting, setIsInviting] = useState(false)
+    const [isSigned, setIsSigned] = useState(false);
+    const [privateKey, setPrivateKey] = useState("");
 
   const documentId = params.id
 
@@ -105,8 +108,8 @@ export default function DocumentViewPage({ params }: { params: { id: string } })
   const [coSigners, setCoSigners] = useState<CoSigner[]>([
     {
       id: "1",
-      name: "Sarah Chen",
-      email: "sarah@legalfirm.com",
+      name: "Lydia Solomon",
+      email: "lydsol224@legalfirm.com",
       role: "Legal Reviewer",
       status: "signed",
       invitedAt: "2024-01-20T11:00:00Z",
@@ -116,8 +119,8 @@ export default function DocumentViewPage({ params }: { params: { id: string } })
     },
     {
       id: "2",
-      name: "Mike Torres",
-      email: "mike@techcorp.com",
+      name: "Adesipe Lukman",
+      email: "sipeluk0g@techcorp.com",
       role: "Technical Lead",
       status: "reviewing",
       invitedAt: "2024-01-20T11:00:00Z",
@@ -126,8 +129,8 @@ export default function DocumentViewPage({ params }: { params: { id: string } })
     },
     {
       id: "3",
-      name: "Alex Rodriguez",
-      email: "alex@company.com",
+      name: "Kayode Dada",
+      email: "kayzi@company.com",
       role: "Project Manager",
       status: "invited",
       invitedAt: "2024-01-20T11:00:00Z",
@@ -222,10 +225,58 @@ export default function DocumentViewPage({ params }: { params: { id: string } })
             <Download className="w-4 h-4 mr-2" />
             Download
           </Button>
-          <Button variant="outline" className="bg-transparent">
-            <Share className="w-4 h-4 mr-2" />
-            Share
-          </Button>
+         {isSigned ? (
+                     <div className="bg-blue-200/40 text-blue-700 px-5 py-1 rounded-md">
+                       Signed
+                     </div>
+                   ) : (
+                     <Dialog>
+                       <DialogTrigger asChild>
+                         <Button
+                           variant="outline"
+                           className="bg-blue-700 text-white hover:bg-blue-700/80"
+                         >
+                           <PenTool className="w-4 h-4 mr-2" />
+                           Sign Contract
+                         </Button>
+                       </DialogTrigger>
+         
+                       <DialogContent className="sm:max-w-md">
+                         <DialogHeader>
+                           <DialogTitle>Confirm Signature</DialogTitle>
+                           <DialogDescription>
+                             For your security, please enter your private key to sign
+                             this contract.
+                             <br />
+                             <span className="text-sm text-muted-foreground">
+                               (This is the same password you used when creating your
+                               account)
+                             </span>
+                           </DialogDescription>
+                         </DialogHeader>
+         
+                         <div className="space-y-4">
+                           <Input
+                             type="password"
+                             placeholder="Enter your private key"
+                             value={privateKey}
+                             onChange={(e) => setPrivateKey(e.target.value)}
+                           />
+         
+                           <Button
+                             className="w-full bg-blue-700 text-white hover:bg-blue-700/90"
+                             onClick={() => {
+                               if (privateKey.trim()) {
+                                 setIsSigned(true);
+                               }
+                             }}
+                           >
+                             Sign Now
+                           </Button>
+                         </div>
+                       </DialogContent>
+                     </Dialog>
+                   )}
         </div>
       </div>
 

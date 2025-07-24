@@ -3,65 +3,12 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Shield, Users, Zap, CheckCircle, FileText, Brain, Coins } from "lucide-react"
 import Link from "next/link"
+import { HeroSection } from "@/components/hero-section"
 
 export default function LandingPage() {
   return (
     <div className="min-h-screen bg-[#F9FAFB]">
-      {/* Header */}
-      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <img src="/clarichain-logo.png" alt="ClariChain" className="w-8 h-8" />
-            <span className="text-xl font-bold text-[#1E293B]">ClariChain</span>
-          </div>
-          <nav className="hidden md:flex items-center space-x-8">
-            <a href="#how-it-works" className="text-[#64748B] hover:text-[#2453CC] transition-colors">
-              How it Works
-            </a>
-            <a href="#benefits" className="text-[#64748B] hover:text-[#2453CC] transition-colors">
-              Benefits
-            </a>
-            <a href="#testimonials" className="text-[#64748B] hover:text-[#2453CC] transition-colors">
-              Use Cases
-            </a>
-          </nav>
-          <div className="flex items-center space-x-4">
-            <Link href="/auth/login">
-              <Button variant="ghost" className="text-[#64748B]">
-                Log In
-              </Button>
-            </Link>
-            <Link href="/auth/signup">
-              <Button className="bg-[#2453CC] hover:bg-[#1e42a4] text-white">Get Started</Button>
-            </Link>
-          </div>
-        </div>
-      </header>
-
-      {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto text-center max-w-4xl">
-          <Badge className="mb-6 bg-[#38B26C]/10 text-[#38B26C] border-[#38B26C]/20">
-            Powered by AI & Cardano Blockchain
-          </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold text-[#1E293B] mb-6 leading-tight">
-            Understand it.
-            <br />
-            Sign it.
-            <br />
-            <span className="text-[#2453CC]">Verify it.</span>
-          </h1>
-          <p className="text-xl text-[#64748B] mb-8 max-w-2xl mx-auto">
-            Transform complex documents into clear, understandable agreements with AI-powered explanations and
-            blockchain-verified signatures.
-          </p>
-          <Link href="/auth/signup">
-            <Button size="lg" className="bg-[#2453CC] hover:bg-[#1e42a4] text-white px-8 py-4 text-lg">
-              Get Started <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-          </Link>
-        </div>
-      </section>
+      <HeroSection/>
 
       {/* How It Works */}
       <section id="how-it-works" className="py-20 px-4 bg-white">
