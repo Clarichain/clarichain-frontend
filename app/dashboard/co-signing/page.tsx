@@ -13,42 +13,42 @@ const coSigningRequests = [
   {
     id: 1,
     documentName: "Partnership Agreement",
-    requester: "Sarah Chen",
+    requester: "Sarah Daniel",
     requesterEmail: "sarah@legalfirm.com",
     status: "Pending Review",
     dueDate: "2024-01-25",
     priority: "High",
     signers: [
       { name: "You", status: "pending", avatar: "JD" },
-      { name: "Mike Torres", status: "signed", avatar: "MT" },
-      { name: "Alex Rodriguez", status: "pending", avatar: "AR" },
+      { name: "Lydia Solomon", status: "signed", avatar: "MT" },
+      { name: "Adesipe Lukeman", status: "pending", avatar: "AR" },
     ],
   },
   {
     id: 2,
     documentName: "Research Collaboration NDA",
-    requester: "Dr. Michael Torres",
+    requester: "Dr. Bimbo Adeoye",
     requesterEmail: "torres@university.edu",
     status: "Signed",
     dueDate: "2024-01-20",
     priority: "Medium",
     signers: [
       { name: "You", status: "signed", avatar: "JD" },
-      { name: "Sarah Chen", status: "signed", avatar: "SC" },
+      { name: "Kayode Dada", status: "signed", avatar: "SC" },
     ],
   },
   {
     id: 3,
     documentName: "Software License Terms",
-    requester: "Alex Rodriguez",
+    requester: "Alex James",
     requesterEmail: "alex@techcorp.com",
     status: "Rejected",
     dueDate: "2024-01-18",
     priority: "Low",
     signers: [
       { name: "You", status: "rejected", avatar: "JD" },
-      { name: "Sarah Chen", status: "pending", avatar: "SC" },
-      { name: "Mike Torres", status: "pending", avatar: "MT" },
+      { name: "Bola Awolowo", status: "pending", avatar: "SC" },
+      { name: "Mike Donald", status: "pending", avatar: "MT" },
     ],
   },
 ]
@@ -258,7 +258,7 @@ export default function CoSigningPage() {
                       <DropdownMenuContent align="end">
                         <DropdownMenuItem
                           onClick={() =>
-                            (window.location.href = `/dashboard/analyze/${encodeURIComponent(request.documentName)}`)
+                            (window.location.href = `/dashboard/document/review/${encodeURIComponent(request.documentName)}`)
                           }
                         >
                           <Eye className="mr-2 h-4 w-4" />

@@ -280,7 +280,7 @@ export default function NFTVaultPage() {
                               <div>
                                 <span className="text-[#64748B]">NFT Hash:</span>
                                 <div className="flex items-center space-x-2 mt-1">
-                                  <code className="text-xs bg-[#F9FAFB] px-2 py-1 rounded flex-1">
+                                  <code className="text-xs bg-[#F9FAFB] px-2 py-1 rounded flex-1 max-w-full truncate">
                                     {selectedNFT.nftHash}
                                   </code>
                                   <Button
@@ -295,7 +295,7 @@ export default function NFTVaultPage() {
                               <div>
                                 <span className="text-[#64748B]">Document Hash:</span>
                                 <div className="flex items-center space-x-2 mt-1">
-                                  <code className="text-xs bg-[#F9FAFB] px-2 py-1 rounded flex-1">
+                                  <code className="text-xs bg-[#F9FAFB] px-2 py-1 rounded flex-1 max-w-full truncate">
                                     {selectedNFT.documentHash}
                                   </code>
                                   <Button
