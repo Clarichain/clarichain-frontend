@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   Sidebar,
@@ -12,11 +12,20 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarSeparator,
-} from "@/components/ui/sidebar"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Badge } from "@/components/ui/badge"
-import { FileText, Users, BookOpen, Coins, Settings, Upload, PenTool } from "lucide-react"
-import Link from "next/link"
+} from "@/components/ui/sidebar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import {
+  FileText,
+  Users,
+  BookOpen,
+  Coins,
+  Settings,
+  Upload,
+  PenTool,
+} from "lucide-react";
+import Link from "next/link";
+import UploadBtnSheet from "./custom-ui/UploadBtnSheet";
 
 const menuItems = [
   {
@@ -42,7 +51,7 @@ const menuItems = [
     icon: Coins,
     badge: "8",
   },
-]
+];
 
 const quickActions = [
   {
@@ -55,7 +64,7 @@ const quickActions = [
     url: "/dashboard/invite",
     icon: PenTool,
   },
-]
+];
 
 export function AppSidebar() {
   return (
@@ -119,19 +128,38 @@ export function AppSidebar() {
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {quickActions.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <Link
-                      href={item.url}
-                      className="flex items-center"
-                    >
-                      <item.icon className="w-4 h-4 mr-3" />
-                      <span>{item.title}</span>
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
+              {quickActions.map((item) => {
+                if (item.title === "Upload Document") {
+                  return (
+                    <SidebarMenuItem key={item.title}>
+                      <UploadBtnSheet>
+                        <SidebarMenuButton>
+                          <div
+                            className="flex items-center"
+                          >
+                            <item.icon className="w-4 h-4 mr-3" />
+                            <span>{item.title}</span>
+                          </div>
+                        </SidebarMenuButton>
+                    </UploadBtnSheet>
+                      </SidebarMenuItem>
+                  );
+                } else {
+                  return (
+                    <SidebarMenuItem key={item.title}>
+                      <SidebarMenuButton asChild>
+                        <Link
+                          href={item.url}
+                          className="flex items-center"
+                        >
+                          <item.icon className="w-4 h-4 mr-3" />
+                          <span>{item.title}</span>
+                        </Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                  );
+                }
+              })}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
