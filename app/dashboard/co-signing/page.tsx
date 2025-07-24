@@ -127,7 +127,7 @@ export default function CoSigningPage() {
       </div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
         <Card className="border-0 shadow-sm bg-white">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">

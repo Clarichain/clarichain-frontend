@@ -61,8 +61,15 @@ export function AppSidebar() {
   return (
     <Sidebar className="border-r border-[#E2E8F0]">
       <SidebarHeader className="p-4">
-        <Link href="/dashboard" className="flex items-center space-x-2">
-          <img src="/clarichain-logo.png" alt="ClariChain" className="w-8 h-8" />
+        <Link
+          href="/dashboard"
+          className="flex items-center space-x-2"
+        >
+          <img
+            src="/clarichain-logo.png"
+            alt="ClariChain"
+            className="w-8 h-8"
+          />
           <span className="text-xl font-bold text-[#1E293B]">ClariChain</span>
         </Link>
       </SidebarHeader>
@@ -76,8 +83,14 @@ export function AppSidebar() {
             <SidebarMenu>
               {menuItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild className="w-full justify-between">
-                    <Link href={item.url} className="flex items-center">
+                  <SidebarMenuButton
+                    asChild
+                    className="w-full justify-between"
+                  >
+                    <Link
+                      href={item.url}
+                      className="flex items-center"
+                    >
                       <div className="flex items-center">
                         <item.icon className="w-4 h-4 mr-3" />
                         <span>{item.title}</span>
@@ -109,7 +122,10 @@ export function AppSidebar() {
               {quickActions.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <Link href={item.url} className="flex items-center">
+                    <Link
+                      href={item.url}
+                      className="flex items-center"
+                    >
                       <item.icon className="w-4 h-4 mr-3" />
                       <span>{item.title}</span>
                     </Link>
@@ -125,7 +141,10 @@ export function AppSidebar() {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
-              <Link href="/dashboard/settings" className="flex items-center">
+              <Link
+                href="/dashboard/settings"
+                className="flex items-center"
+              >
                 <Settings className="w-4 h-4 mr-3" />
                 <span>Settings</span>
               </Link>
@@ -137,15 +156,21 @@ export function AppSidebar() {
           <div className="flex items-center space-x-3">
             <Avatar className="w-8 h-8">
               <AvatarImage src="/placeholder.svg?height=32&width=32" />
-              <AvatarFallback className="bg-[#2453CC] text-white text-sm">JD</AvatarFallback>
+              <AvatarFallback className="bg-[#2453CC] text-white text-sm">
+                JD
+              </AvatarFallback>
             </Avatar>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-[#1E293B] truncate">John Doe</p>
-              <p className="text-xs text-[#64748B] truncate">john@example.com</p>
+              <p className="text-sm font-medium text-[#1E293B] truncate">
+                John Doe
+              </p>
+              <p className="text-xs text-[#64748B] truncate">
+                john@example.com
+              </p>
             </div>
           </div>
         </div>
       </SidebarFooter>
     </Sidebar>
-  )
+  );
 }
