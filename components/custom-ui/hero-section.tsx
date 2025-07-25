@@ -8,6 +8,7 @@ import { AnimatedGroup } from "@/components/ui/animated-group";
 import { cn } from "@/lib/utils";
 import { useScroll, Variants } from "motion/react";
 import Image from "next/image";
+import { BackgroundBeamsWithCollision } from "../ui/background-beams-with-collision";
 
 const transitionVariants: Variants = {
   hidden: {
@@ -31,67 +32,70 @@ export function HeroSection() {
   return (
     <>
       <HeroHeader />
-      <main className="overflow-hidden">
+      <main className="overflow-hidden bg-white pb-20">
         <section>
-          <div className="relative pt-24">
+          <div className="relative pt-16">
             <div className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--background)_75%)]"></div>
-            <div className="mx-auto max-w-5xl px-6">
-              <div className="sm:mx-auto lg:mr-auto">
-                <AnimatedGroup
-                  variants={{
-                    container: {
-                      visible: {
-                        transition: {
-                          staggerChildren: 0.05,
-                          delayChildren: 0.75,
+            <BackgroundBeamsWithCollision className="h-fit">
+              <div className="mx-auto p-8 md:p-12">
+                <div className="sm:mx-auto lg:mr-auto">
+                  <AnimatedGroup
+                    variants={{
+                      container: {
+                        visible: {
+                          transition: {
+                            staggerChildren: 0.05,
+                            delayChildren: 0.75,
+                          },
                         },
                       },
-                    },
-                    ...transitionVariants,
-                  }}
-                >
-                  <h1 className="mt-4 max-w-2xl text-balance text-4xl sm:text-5xl font-medium md:text-6xl lg:mt-16">
-                    Read and Break, and Sign Docs with AI
-                  </h1>
-                  <p className="mt-4 max-w-2xl text-pretty text-base md:text-lg">
-                    Upload contracts, policies, or academic papers and get clear
-                    AI-powered explanations. Mint tamper-proof NFTs on Cardano
-                    as verifiable proof of understanding.
-                  </p>
-                  <div className="mt-8 flex items-center gap-2">
-                    <div
-                      key={1}
-                      className="bg-foreground/10 rounded-[14px] border p-0.5"
-                    >
+                      ...transitionVariants,
+                    }}
+                  >
+                    <h1 className="mt-4 max-w-2xl text-balance text-4xl sm:text-5xl font-medium md:text-6xl lg:mt-16">
+                      Read, Break Down, and Sign Docs with AI
+                    </h1>
+                    <p className="mt-4 max-w-2xl text-pretty text-base md:text-lg">
+                      Upload contracts, policies, or academic papers and get
+                      clear AI-powered explanations. Mint tamper-proof NFTs on
+                      Cardano as verifiable proof of understanding.
+                    </p>
+                    <div className="mt-8 flex items-center gap-2">
+                      <div
+                        key={1}
+                        className="bg-foreground/10 rounded-[14px] border p-0.5"
+                      >
+                        <Button
+                          asChild
+                          size="lg"
+                          className="rounded-xl px-5 text-base bg-blue-600"
+                        >
+                          <Link href="/dashboard">
+                            <span className="text-nowrap">Get Started</span>
+                          </Link>
+                        </Button>
+                      </div>
                       <Button
+                        key={2}
                         asChild
                         size="lg"
-                        className="rounded-xl px-5 text-base"
+                        variant="ghost"
+                        className="h-[42px] rounded-xl px-5 text-base"
                       >
-                        <Link href="/dashboard">
-                          <span className="text-nowrap">Get Started</span>
+                        <Link
+                          href="#link"
+                          className="flex"
+                        >
+                          <PlayCircle />
+                          <span className="text-nowrap">Watch demo</span>
                         </Link>
                       </Button>
                     </div>
-                    <Button
-                      key={2}
-                      asChild
-                      size="lg"
-                      variant="ghost"
-                      className="h-[42px] rounded-xl px-5 text-base"
-                    >
-                      <Link
-                        href="#link"
-                        className="flex"
-                      >
-                        <PlayCircle />
-                        <span className="text-nowrap">Watch demo</span>
-                      </Link>
-                    </Button>
-                  </div>
-                </AnimatedGroup>
+                  </AnimatedGroup>
+                </div>
               </div>
-            </div>
+            </BackgroundBeamsWithCollision>
+
             <AnimatedGroup
               variants={{
                 container: {
@@ -105,22 +109,22 @@ export function HeroSection() {
                 ...transitionVariants,
               }}
             >
-              <div className="relative -mr-56 mt-4 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
+              <div className="relative -mr-56 mt-4 overflow-hidden sm:mr-0 sm:mt-12  px-8 md:px-12 ">
                 <div
                   aria-hidden
                   className="bg-gradient-to-b to-background absolute inset-0 z-10 from-transparent from-35%"
                 />
-                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-5xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
+                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto overflow-hidden rounded-2xl border shadow-lg shadow-zinc-950/15 ring-1">
                   <img
                     className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
-                    src="/dashboard-demo.png"
+                    src="/demo/dashboard-demo.png"
                     alt="app screen"
                     width="2700"
                     height="1440"
                   />
                   <img
                     className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border dark:hidden"
-                    src="/dashboard-demo.png"
+                    src="/demo/dashboard-demo.png"
                     alt="app screen"
                     width="2700"
                     height="1440"
@@ -254,9 +258,9 @@ export const HeroHeader = () => {
           scrolled && "bg-background/50 backdrop-blur-3xl"
         )}
       >
-        <div className="mx-auto max-w-5xl px-6 transition-all duration-300">
-          <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
-            <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
+        <div className="mx-auto px-8 md:px-12 transition-all duration-300">
+          <div className="relative flex flex-nowrap items-center justify-between gap-14 py-3 lg:py-4">
+            <div className="flex w-full items-center justify-between gap-12  ">
               <Link
                 href="/"
                 aria-label="home"
@@ -318,6 +322,7 @@ export const HeroHeader = () => {
                 <Button
                   asChild
                   size="sm"
+                  className="bg-blue-600 text-primary-foreground rounded-xl px-5 text-base"
                 >
                   <Link href="/auth/signup">
                     <span>Sign Up</span>
