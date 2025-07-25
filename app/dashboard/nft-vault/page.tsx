@@ -25,9 +25,9 @@ const nftCertificates = [
     nftHash: "0x9f8e7d6c5b4a39281706f5e4d3c2b1a09f8e7d6c5b4a39281706f5e4d3c2b1a0",
     documentHash: "0x1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7q8r9s0t1u2v3w4x5y6z",
     signers: [
-      { name: "John Doe", avatar: "JD" },
-      { name: "Sarah Chen", avatar: "SC" },
-      { name: "Mike Torres", avatar: "MT" },
+      { name: "Lydia Solomon", avatar: "JS" },
+      { name: "Adesipe Lukeman", avatar: "AL" },
+      { name: "Kayode Dada", avatar: "KD" },
     ],
     blockchainUrl: "https://cardanoscan.io/token/9f8e7d6c5b4a39281706f5e4d3c2b1a0",
     metadata: {
