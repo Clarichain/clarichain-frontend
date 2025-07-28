@@ -121,8 +121,8 @@ export default function LandingPage() {
                   Legal Contracts
                 </h3>
                 <p className="text-[#64748B] mb-4">
-                  "ClariChain helped our clients understand complex legal
-                  agreements, reducing disputes by 60%."
+                  &quote;ClariChain helped our clients understand complex legal
+                  agreements, reducing disputes by 60%.&quote;
                 </p>
                 <div className="text-sm text-[#64748B]">
                   <strong>Sarah Chen</strong> - Legal Partner
@@ -138,8 +138,8 @@ export default function LandingPage() {
                   Academic Research
                 </h3>
                 <p className="text-[#64748B] mb-4">
-                  "Perfect for thesis approvals and research collaborations. The
-                  blockchain verification gives us confidence."
+                  &quot;Perfect for thesis approvals and research collaborations. The
+                  blockchain verification gives us confidence.&quot;
                 </p>
                 <div className="text-sm text-[#64748B]">
                   <strong>Dr. Michael Torres</strong> - University Professor
@@ -155,8 +155,8 @@ export default function LandingPage() {
                   Policy Documents
                 </h3>
                 <p className="text-[#64748B] mb-4">
-                  "Government policies are now accessible to citizens.
-                  ClariChain bridges the communication gap."
+                  &quot;Government policies are now accessible to citizens.
+                  ClariChain bridges the communication gap.&quot;
                 </p>
                 <div className="text-sm text-[#64748B]">
                   <strong>Alex Rodriguez</strong> - Policy Director

@@ -1,18 +1,16 @@
 "use client";
 
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { signIn } from "next-auth/react";
-import { useState } from "react";
 import { Input } from "@/components/ui/input";
-import { toast } from "sonner";
 import { getErrorMessage } from "@/lib/helpers";
-import { ButtonProps } from "react-day-picker";
-import Link from "next/link";
-import { Button as ShadcnBtnComp } from "@/components/ui/button";
-import { Loader2, Router } from "lucide-react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Loader2 } from "lucide-react";
+import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { ButtonProps } from "react-day-picker";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
+import { z } from "zod";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Invalid email address" }),

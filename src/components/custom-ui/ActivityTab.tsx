@@ -87,7 +87,7 @@ export default function ActivityTab() {
                     </p>
                     {activity.comment && (
                       <p className="text-xs text-[#64748B] mt-1">
-                        Comment: "{activity.comment}"
+                        Comment: &quot;{activity.comment}&quot;
                       </p>
                     )}
                   </div>

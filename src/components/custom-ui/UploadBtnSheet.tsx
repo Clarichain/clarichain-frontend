@@ -195,7 +195,7 @@ const UploadBtnSheet = ({ children }: { children: React.ReactNode }) => {
               <File className="w-8 h-8 text-[#2453CC] animate-pulse" />
             </div>
             <h3 className="text-lg font-semibold">
-              Analyzing "{documentTitle}"
+              Analyzing &quot;{documentTitle}&quot;
             </h3>
             <p className="text-muted-foreground">
               This may take a few moments depending on document length
@@ -220,7 +220,7 @@ const UploadBtnSheet = ({ children }: { children: React.ReactNode }) => {
                     Document Successfully Uploaded
                   </h4>
                   <p className="text-sm text-muted-foreground">
-                    "{documentTitle}" is now ready for AI analysis.
+                    &quot;{documentTitle}&quot; is now ready for AI analysis.
                   </p>
                   <ul className="text-sm text-muted-foreground mt-2 space-y-1">
                     <li>• Document type: {documentType}</li>

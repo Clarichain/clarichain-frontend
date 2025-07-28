@@ -1,6 +1,7 @@
 "use client";
 
-import { use, useState } from "react";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -9,15 +10,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Progress } from "@/components/ui/progress";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Dialog,
   DialogContent,
@@ -26,26 +18,30 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Progress } from "@/components/ui/progress";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Switch } from "@/components/ui/switch";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Textarea } from "@/components/ui/textarea";
 import {
-  FileText,
+  AlertTriangle,
+  ArrowRight,
   Brain,
-  Users,
-  Eye,
-  Edit3,
   CheckCircle,
   Clock,
-  AlertTriangle,
-  Info,
-  Plus,
-  Send,
-  MessageSquare,
-  Download,
-  Share,
   Coins,
-  ArrowRight,
-  Edit,
+  Download,
+  Eye,
+  FileText,
+  Info,
+  MessageSquare,
   PenTool,
+  Send,
+  Users
 } from "lucide-react";
+import { use, useState } from "react";
 
 interface CoSigner {
   id: string;
@@ -783,7 +779,7 @@ export default function DocumentViewPage({
                         January 21, 2024 at 2:30 PM
                       </p>
                       <p className="text-xs text-[#64748B] mt-1">
-                        Comment: "Legal terms look good. Approved for signing."
+                        Comment: &apos;Legal terms look good. Approved for signing.&apos;
                       </p>
                     </div>
                   </div>
@@ -797,8 +793,8 @@ export default function DocumentViewPage({
                         January 21, 2024 at 10:15 AM
                       </p>
                       <p className="text-xs text-[#64748B] mt-1">
-                        Comment: "Reviewing technical specifications in Section
-                        3."
+                        Comment: &apos;Reviewing technical specifications in Section
+                        3.&apos;
                       </p>
                     </div>
                   </div>

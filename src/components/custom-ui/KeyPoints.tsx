@@ -7,8 +7,9 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import { getPointIcon } from "@/lib/helpers";
+import type { KeyPoints } from "@/types";
 
-export default function KeyPoints({ keyPoints }: { keyPoints: any[] }) {
+export default function KeyPoints({ keyPoints }: { keyPoints: KeyPoints[] }) {
   return (
     <Card className="border-0 shadow-sm bg-white">
       <CardHeader>

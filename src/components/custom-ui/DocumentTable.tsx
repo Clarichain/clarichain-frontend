@@ -54,13 +54,13 @@ const getStatusBadge = (status: string) => {
   }
 }
 
-const DocumentTable = ({documents}: {documents: DocumentType[]}) => {
+const DocumentTable = ({documents}: {documents: Partial<DocumentType>[]}) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const filteredDocuments = documents.filter(
     (doc) =>
-      doc.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      doc.type.toLowerCase().includes(searchTerm.toLowerCase())
+      doc.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      doc.type?.toLowerCase().includes(searchTerm.toLowerCase())
   );
   return (
     <Card className="border-0 shadow-sm">
@@ -123,9 +123,9 @@ const DocumentTable = ({documents}: {documents: DocumentType[]}) => {
                     {doc.type}
                   </Badge>
                 </TableCell>
-                <TableCell>{getStatusBadge(doc.status)}</TableCell>
+                <TableCell>{getStatusBadge(doc.status ?? "")}</TableCell>
                 <TableCell className="text-[#64748B]">
-                  {doc.signers > 0 ? `${doc.signers} signers` : "No signers"}
+                  {doc.signers && doc.signers > 0 ? `${doc.signers} signers` : "No signers"}
                 </TableCell>
                 <TableCell className="text-[#64748B]">
                   {doc.createdAt}

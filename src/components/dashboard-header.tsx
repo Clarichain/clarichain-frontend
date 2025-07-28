@@ -1,4 +1,3 @@
-import { auth } from "@/auth";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -12,14 +11,11 @@ import {
 import { Input } from "@/components/ui/input";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Bell, Plus, Search } from "lucide-react";
+import { Session } from "next-auth";
 import ProfileAvatarWithDropdownMenu from "./custom-ui/ProfileAvatarWithDropdownMenu";
 import UploadBtnSheet from "./custom-ui/UploadBtnSheet";
-import { notFound } from "next/navigation";
 
-export async function DashboardHeader() {
-  const session = await auth();
-
-  if (!session?.user) return notFound()
+export function DashboardHeader({session}: {session: Session}) {
   return (
     <header className="sticky top-0 z-40 border-b bg-white/80 backdrop-blur-sm">
       <div className="flex h-16 items-center justify-between px-4 sm:px-6">

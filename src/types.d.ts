@@ -6,6 +6,10 @@ export interface DocumentType {
   signers: number;
   createdAt: string;
   lastActivity: string;
+  uploadedAt: string;
+  fileSize: string;
+  pages: number;
+  hash: string;
 };
 
 // app/documents/[id]/types.ts
@@ -22,14 +26,20 @@ export interface CoSigner {
 }
 
 export interface Document {
-  id: string
-  name: string
-  type: string
-  uploadedAt: string
-  status: string
-  fileSize: string
-  pages: number
-  hash: string
+  id: string;
+  name: string;
+  type: string;
+  uploadedAt: string;
+  status: string;
+  fileSize: string;
+  pages: number;
+  hash: string;
+}
+
+export interface KeyPoints {
+  title: string;
+  description: string;
+  type: string;
 }
 
 export interface AiAnalysis {
@@ -37,9 +47,11 @@ export interface AiAnalysis {
   processedAt: string
   summary: string
   eli5Summary: string
-  keyPoints: {
-    title: string
-    description: string
-    type: string
-  }[]
+  keyPoints: KeyPoints[]
+}
+
+export interface DocumentData {
+  aiAnalysis: AiAnalysis;
+  document: Document;
+  coSigners: CoSigner[];
 }

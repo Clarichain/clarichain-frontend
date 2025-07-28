@@ -5,10 +5,11 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { getPointIcon } from "@/lib/helpers"
 
-export default function AnalyzePage({ params }: { params: { filename: string } }) {
+export default async function AnalyzePage({ params }: { params: Promise<{ filename: string }> }) {
 
+  const {filename} = await params
 
-  const documentTitle = decodeURIComponent(params.filename)
+  const documentTitle = decodeURIComponent(filename)
 
   const advancedSummary = `This Software License Agreement establishes the terms and conditions under which the licensor grants the licensee certain rights to use proprietary software. The agreement includes provisions for intellectual property protection, usage limitations, liability disclaimers, and termination clauses. Key obligations include maintaining confidentiality of proprietary information, compliance with usage restrictions, and adherence to payment terms as specified in Schedule A.`
 

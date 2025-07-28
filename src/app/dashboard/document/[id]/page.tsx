@@ -4,13 +4,9 @@ import CoSignersTab from "@/components/custom-ui/CoSignersTab";
 import DocumentHeader from "@/components/custom-ui/DocumentHeader";
 import SummaryTab from "@/components/custom-ui/DocumentSummary";
 import DocumentTab from "@/components/custom-ui/DocumentTab";
-import SignDialog from "@/components/custom-ui/SignDialog";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Brain,
-  Download,
   FileText,
   MessageSquare,
   Users
@@ -28,13 +24,13 @@ interface CoSigner {
   avatar: string;
 }
 
-export default  function DocumentPage({
+export default async function DocumentPage({
   params,
 }: {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }) {
 
-  const {id: documentId} = params;
+  const {id: documentId} = await params;
 
   // Mock document data
   const document = {

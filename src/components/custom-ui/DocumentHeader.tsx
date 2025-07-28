@@ -2,16 +2,16 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import SignDialog from "./SignDialog";
+import { DocumentType } from "@/types";
 
-export default function DocumentHeader({ document }: { document: any }) {
-
+export default function DocumentHeader({ document }: { document: Partial<DocumentType> }) {
   return (
     <div className="flex max-md:flex-col md:items-center gap-2 justify-between">
       <div>
         <h1 className="text-2xl font-bold text-[#1E293B]">{document.name}</h1>
         <p className="text-[#64748B] mt-1">
           {document.type} • Uploaded{" "}
-          {new Date(document.uploadedAt).toLocaleDateString()} •{" "}
+          {document.uploadedAt ? new Date(document.uploadedAt).toLocaleDateString() : "Unknown date"} •{" "}
           {document.pages} pages
         </p>
       </div>

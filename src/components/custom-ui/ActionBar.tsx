@@ -3,8 +3,9 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Users, Coins, ArrowRight } from "lucide-react";
+import { CoSigner } from "@/types";
 
-export default function ActionBar({ coSigners }: { coSigners: any[] }) {
+export default function ActionBar({ coSigners }: { coSigners: CoSigner[] }) {
   const signedCount = coSigners.filter((s) => s.status === "signed").length;
   const totalSigners = coSigners.length;
 

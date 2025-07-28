@@ -1,20 +1,18 @@
 "use client"
 
-import { useState } from "react"
+import ProfileAvatar from "@/components/custom-ui/ProfileAvatar"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Switch } from "@/components/ui/switch"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
+import { Switch } from "@/components/ui/switch"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { User, Bell, Shield, Wallet, Key, Trash2, Upload, Save, Info } from "lucide-react"
+import { Textarea } from "@/components/ui/textarea"
+import { Bell, Info, Key, Save, Shield, Trash2, Upload, User, Wallet } from "lucide-react"
 import { useSession } from "next-auth/react"
-import ProfileAvatar from "@/components/custom-ui/ProfileAvatar"
-import { notFound } from "next/navigation"
+import { useState } from "react"
 
 export default function SettingsPage() {
   const { data: session} =useSession()
@@ -192,7 +190,7 @@ export default function SettingsPage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <h4 className="font-medium text-[#1E293B]">Co-signer Invited</h4>
-                    <p className="text-sm text-[#64748B]">When you're invited to sign a document</p>
+                    <p className="text-sm text-[#64748B]">When you&apos;re invited to sign a document</p>
                   </div>
                   <Switch
                     checked={notifications.coSignerInvited}

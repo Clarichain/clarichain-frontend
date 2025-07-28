@@ -1,3 +1,4 @@
+import { Badge } from "@/components/ui/badge";
 import {
   Sidebar,
   SidebarContent,
@@ -11,23 +12,20 @@ import {
   SidebarMenuItem,
   SidebarSeparator,
 } from "@/components/ui/sidebar";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
 import {
-  FileText,
-  Users,
   BookOpen,
   Coins,
+  FileText,
+  PenTool,
   Settings,
   Upload,
-  PenTool,
+  Users,
 } from "lucide-react";
+import { Session } from "next-auth";
 import Link from "next/link";
+import ProfileAvatar from "./custom-ui/ProfileAvatar";
 import UploadBtnSheet from "./custom-ui/UploadBtnSheet";
 import { LogoWithText } from "./custom-ui/hero-section";
-import { auth } from "@/auth";
-import ProfileAvatar from "./custom-ui/ProfileAvatar";
-import { notFound } from "next/navigation";
 
 const menuItems = [
   {
@@ -68,10 +66,7 @@ const quickActions = [
   },
 ];
 
-export async function AppSidebar() {
-  const session = await auth()
-
-  if(!session?.user) return notFound()
+export function AppSidebar({session}: {session: Session}) {
   return (
     <Sidebar className="border-r border-[#E2E8F0]">
       <SidebarHeader className="p-4">

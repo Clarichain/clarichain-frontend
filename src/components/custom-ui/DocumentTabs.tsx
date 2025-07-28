@@ -1,11 +1,12 @@
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Brain, FileText, Users, MessageSquare } from "lucide-react";
+import { DocumentData } from "@/types";
+import { Brain, FileText, MessageSquare, Users } from "lucide-react";
+import ActivityTab from "./ActivityTab";
+import CoSignersTab from "./CoSignersTab";
 import SummaryTab from "./DocumentSummary";
 import DocumentTab from "./DocumentTab";
-import CoSignersTab from "./CoSignersTab";
-import ActivityTab from "./ActivityTab";
 
-export default function DocumentTabs({ documentData }: { documentData: any }) {
+export default function DocumentTabs({ documentData }: { documentData: DocumentData }) {
   return (
     <Tabs
       defaultValue="summary"

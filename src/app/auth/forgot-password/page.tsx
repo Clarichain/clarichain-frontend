@@ -83,7 +83,7 @@ export default function ForgotPasswordPage() {
                   <CheckCircle className="w-8 h-8 text-[#38B26C]" />
                 </div>
                 <p className="text-[#64748B]">
-                  If an account with <strong>{email}</strong> exists, you'll receive a password reset link shortly.
+                  If an account with <strong>{email}</strong> exists, you&apos;ll receive a password reset link shortly.
                 </p>
                 <Link href="/auth/login">
                   <Button className="w-full bg-[#2453CC] hover:bg-[#1e42a4] text-white">Return to Sign In</Button>

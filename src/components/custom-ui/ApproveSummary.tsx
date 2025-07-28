@@ -1,12 +1,4 @@
 "use client";
-import React, { useState } from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "../ui/card";
 import {
   AlertTriangle,
   ArrowRight,
@@ -14,12 +6,18 @@ import {
   Edit3,
   Users,
 } from "lucide-react";
+import { useState } from "react";
 import { Button } from "../ui/button";
-import { useRouter } from "next/navigation";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../ui/card";
 
 const ApproveSummary = () => {
   const [isApproved, setIsApproved] = useState(false);
-  const router = useRouter()
 
   const handleApprove = () => {
     setIsApproved(true);

@@ -12,10 +12,11 @@ import {
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { getPointIcon } from "@/lib/helpers";
+import { AiAnalysis } from "@/types";
 import { Brain, CheckCircle, Edit3 } from "lucide-react";
 import { Key, useState } from "react";
 
-export default function SummaryTab({ aiAnalysis }: { aiAnalysis: any }) {
+export default function SummaryTab({ aiAnalysis }: { aiAnalysis: AiAnalysis }) {
   const [isELI5Mode, setIsELI5Mode] = useState(false);
 
   return (

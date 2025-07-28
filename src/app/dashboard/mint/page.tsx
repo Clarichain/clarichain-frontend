@@ -1,15 +1,15 @@
 "use client"
 
-import { useState } from "react"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Progress } from "@/components/ui/progress"
-import { FileText, Wallet, Coins, CheckCircle, ExternalLink, Copy } from "lucide-react"
+import { CheckCircle, Coins, Copy, ExternalLink, FileText, Wallet } from "lucide-react"
+import { useState } from "react"
 
 export default function MintPage() {
-  const [isWalletConnected, setIsWalletConnected] = useState(false)
+  // const [isWalletConnected, setIsWalletConnected] = useState(false)
   const [isMinting, setIsMinting] = useState(false)
   const [mintingProgress, setMintingProgress] = useState(0)
   const [isMinted, setIsMinted] = useState(false)
@@ -27,11 +27,11 @@ export default function MintPage() {
     ],
   }
 
-  const connectWallet = async () => {
-    // Simulate wallet connection
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    setIsWalletConnected(true)
-  }
+  // const connectWallet = async () => {
+  //   // Simulate wallet connection
+  //   await new Promise((resolve) => setTimeout(resolve, 1000))
+  //   // setIsWalletConnected(true)
+  // }
 
   const mintNFT = async () => {
     setIsMinting(true)
@@ -161,7 +161,7 @@ export default function MintPage() {
                   <div className="text-center">
                     <h3 className="font-semibold text-[#1E293B] mb-2">Minting NFT Certificate...</h3>
                     <p className="text-sm text-[#64748B] mb-4">
-                      This process may take a few minutes. Please don't close this window.
+                      This process may take a few minutes. Please don&apos;t close this window.
                     </p>
                     <Progress value={mintingProgress} className="w-full max-w-md mx-auto" />
                     <p className="text-sm text-[#64748B] mt-2">{mintingProgress}% complete</p>
