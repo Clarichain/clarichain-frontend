@@ -22,9 +22,9 @@ const formSchema = z.object({
 type FormSchema = z.infer<typeof formSchema>;
 
 const LoginForm: React.FC = () => {
-  const router = useRouter()
+  const router = useRouter();
   const [error, setError] = useState("");
-  const [isLoading, setisLoading] = useState(false)
+  const [isLoading, setisLoading] = useState(false);
 
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
@@ -41,7 +41,7 @@ const LoginForm: React.FC = () => {
   } = form;
 
   const onSubmit = async (data: FormSchema) => {
-    setisLoading(true)
+    setisLoading(true);
     setError("");
 
     const res = await signIn("credentials", {
@@ -54,16 +54,18 @@ const LoginForm: React.FC = () => {
       toast.error("Login Failed", {
         className: "bg-red-500 text-white",
         description: getErrorMessage(res.error),
-       position: "top-right"
+        position: "top-right",
       });
-      setisLoading(false)
-    } else {
-       toast.success("You have logged in successfully!", {
-         className: "bg-green-500 text-white",
-         position: "top-right",
-       });
-      router.push("/dashboard")
+      setisLoading(false);
+      return;
     }
+
+    toast.success("You have logged in successfully!", {
+      className: "bg-green-500 text-white",
+      position: "top-right",
+    });
+    setisLoading(false)
+    router.push("/dashboard");
   };
 
   return (
@@ -125,7 +127,7 @@ const LoginForm: React.FC = () => {
         className="w-full flex items-center justify-center"
         disabled={isLoading}
       >
-       {isLoading ? <Loader2 className="animate-spin" /> : "Sign In"}
+        {isLoading ? <Loader2 className="animate-spin" /> : "Sign In"}
       </Button>
 
       {error && (
