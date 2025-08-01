@@ -1,25 +1,45 @@
+import { Features } from "@/components/custom-ui/features";
+import { Footer } from "@/components/custom-ui/footer-section";
 import { HeroSection } from "@/components/custom-ui/hero-section";
 import { HowItWorks } from "@/components/custom-ui/HowItWorks";
+import { Testimonials } from "@/components/custom-ui/Testimonial";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  ArrowRight,
-  CheckCircle,
-  FileText,
-  Shield,
-  Zap
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function LandingPage() {
   return (
     <div className="min-h-screen bg-[#F9FAFB]">
-        <HeroSection />
-
+      <HeroSection />
+      <Features />
       <HowItWorks />
+      <Testimonials />
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 bg-[#1E293B]">
+        <div className="container mx-auto text-center max-w-4xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to Transform Your Document Process?
+          </h2>
+          <p className="text-xl text-gray-300 mb-8">
+            Join thousands of professionals who trust ClariChain for secure,
+            AI-powered document verification.
+          </p>
+          <Link href="/auth/signup">
+            <Button
+              size="lg"
+              className="bg-[#2453CC] hover:bg-[#1e42a4] text-white px-8 py-4 text-lg"
+            >
+              Start Free Trial <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </Link>
+        </div>
+      </section>
+
+      <Footer/>
 
       {/* Benefits */}
-      <section
+      {/* <section
         id="benefits"
         className="py-20 px-4 bg-[#F9FAFB]"
       >
@@ -98,10 +118,10 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Use Cases */}
-      <section
+      {/* <section
         id="testimonials"
         className="py-20 px-4 bg-white"
       >
@@ -138,8 +158,9 @@ export default function LandingPage() {
                   Academic Research
                 </h3>
                 <p className="text-[#64748B] mb-4">
-                  &quot;Perfect for thesis approvals and research collaborations. The
-                  blockchain verification gives us confidence.&quot;
+                  &quot;Perfect for thesis approvals and research
+                  collaborations. The blockchain verification gives us
+                  confidence.&quot;
                 </p>
                 <div className="text-sm text-[#64748B]">
                   <strong>Dr. Michael Torres</strong> - University Professor
@@ -165,31 +186,10 @@ export default function LandingPage() {
             </Card>
           </div>
         </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-4 bg-[#1E293B]">
-        <div className="container mx-auto text-center max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Transform Your Document Process?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Join thousands of professionals who trust ClariChain for secure,
-            AI-powered document verification.
-          </p>
-          <Link href="/auth/signup">
-            <Button
-              size="lg"
-              className="bg-[#2453CC] hover:bg-[#1e42a4] text-white px-8 py-4 text-lg"
-            >
-              Start Free Trial <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-          </Link>
-        </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
-      <footer className="bg-white border-t py-12 px-4">
+      {/* <footer className="bg-white border-t py-12 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
@@ -300,7 +300,7 @@ export default function LandingPage() {
             <p>&copy; 2024 ClariChain. All rights reserved.</p>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 }

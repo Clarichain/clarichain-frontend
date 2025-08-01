@@ -52,7 +52,7 @@ export function HeroSection() {
           <div className="relative pt-16">
             <div className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--background)_75%)]"></div>
             <BackgroundBeamsWithCollision className="h-fit">
-              <div className="mx-auto p-8 md:p-12">
+              <div className="mx-auto p-8 md:p-[70px]">
                 <div className="sm:mx-auto lg:mr-auto">
                   <AnimatedGroup
                     variants={{
@@ -67,7 +67,7 @@ export function HeroSection() {
                       ...transitionVariants,
                     }}
                   >
-                    <h1 className="mt-4 max-w-2xl text-balance text-4xl sm:text-5xl font-medium md:text-6xl lg:mt-16">
+                    <h1 className="mt-4 max-w-2xl text-balance text-4xl sm:text-5xl font-medium md:text-6xl lg:mt-8">
                       Read, Break Down, and Sign Docs with AI
                     </h1>
                     <p className="mt-4 max-w-2xl text-pretty text-base md:text-lg">
@@ -83,7 +83,7 @@ export function HeroSection() {
                         <Button
                           asChild
                           size="lg"
-                          className="rounded-xl px-5 text-base bg-blue-600"
+                          className="px-5 text-base bg-blue-600"
                         >
                           <Link href="/dashboard">
                             <span className="text-nowrap">Get Started</span>
@@ -94,8 +94,8 @@ export function HeroSection() {
                         key={2}
                         asChild
                         size="lg"
-                        variant="ghost"
-                        className="h-[42px] rounded-xl px-5 text-base"
+                        variant="outline"
+                        className="border-black/30 px-5 text-base"
                       >
                         <Link
                           href="#link"
@@ -124,7 +124,7 @@ export function HeroSection() {
                 ...transitionVariants,
               }}
             >
-              <div className="relative -mr-56 mt-4 overflow-hidden sm:mr-0 sm:mt-12  px-8 md:px-12 ">
+              <div className="relative -mr-56 mt-4 overflow-hidden sm:mr-0 sm:mt-8 px-8 md:px-[70px] ">
                 <div
                   aria-hidden
                   className="bg-gradient-to-b to-background absolute inset-0 z-10 from-transparent from-35%"
@@ -273,7 +273,7 @@ export const HeroHeader = () => {
           scrolled && "bg-background/50 backdrop-blur-3xl"
         )}
       >
-        <div className="mx-auto px-8 md:px-12 transition-all duration-300">
+        <div className="mx-auto px-8 md:px-[70px] transition-all duration-300">
           <div className="relative flex items-center justify-between gap-14 py-3 lg:py-4">
             <div className="flex max-md:w-full items-center justify-between gap-12">
               <Link
@@ -281,7 +281,7 @@ export const HeroHeader = () => {
                 aria-label="home"
                 className="flex items-center space-x-2"
               >
-                <LogoWithText variant="blue" />
+                <LogoWithText variant="blue" logoClassName="md:size-7" textClassName="md:text-[18px] md:font-medium md:tracking-wide" />
               </Link>
 
               {/* Hamburger Menu Toggle */}
@@ -309,7 +309,7 @@ export const HeroHeader = () => {
             
             {/* Desktop Nav */}
             <div className="hidden lg:block mx-auto">
-              <ul className="flex gap-8 text-sm">
+              <ul className="flex gap-8 text-base">
                 {menuItems.map((item, index) => (
                   <li key={index}>
                     <Link
@@ -338,7 +338,7 @@ export const HeroHeader = () => {
                 <Button
                   asChild
                   size="sm"
-                  className="bg-blue-600 text-primary-foreground rounded-xl px-5 text-base"
+                  className="bg-blue-600 text-primary-foreground px-5 text-base "
                 >
                   <Link href="/auth/signup">
                     <span>Sign Up</span>

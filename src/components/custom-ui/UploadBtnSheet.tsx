@@ -202,6 +202,7 @@ const UploadBtnSheet = ({ children }: { children: React.ReactNode }) => {
             </p>
             <Progress
               value={uploadProgress}
+              color="blue"
               className="mx-auto max-w-sm"
             />
             <p className="text-sm text-muted-foreground">

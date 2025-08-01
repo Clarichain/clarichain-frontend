@@ -25,10 +25,13 @@ const features = [
 
 export function HowItWorks() {
   return (
-    <div className="py-14">
+    <div>
       <FeatureSteps
         features={features}
-        title="How ClariChain Works"
+        title={
+          <>How <span className="text-blue-600">ClariChain</span> Works</>
+        }
+        description="ClariChain makes contract workflows human-friendly. Upload a file, get an AI summary, co-sign it, and store it forever — all on Cardano."
         autoPlayInterval={4000}
         imageHeight="h-[500px]"
       />
