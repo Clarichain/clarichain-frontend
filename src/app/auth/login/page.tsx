@@ -1,5 +1,6 @@
 import AuthFormLayout from "@/components/custom-ui/AuthForm";
 import LoginForm from "@/components/custom-ui/LoginForm";
+import Link from "next/link";
 
 export default function SignInPage() {
   return (
@@ -9,12 +10,12 @@ export default function SignInPage() {
         subtitle={
           <p className="mt-2 text-zinc-500 dark:text-zinc-400">
             Don’t have an account?{" "}
-            <a
+            <Link
               href="/auth/signup"
               className="text-blue-600 dark:text-blue-400 hover:underline"
             >
               Create one
-            </a>
+            </Link>
           </p>
         }
       >

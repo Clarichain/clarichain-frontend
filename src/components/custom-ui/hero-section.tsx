@@ -281,7 +281,11 @@ export const HeroHeader = () => {
                 aria-label="home"
                 className="flex items-center space-x-2"
               >
-                <LogoWithText variant="blue" logoClassName="md:size-7" textClassName="md:text-[18px] md:font-medium md:tracking-wide" />
+                <LogoWithText
+                  variant="blue"
+                  logoClassName="md:size-7"
+                  textClassName="md:text-[18px] md:font-medium md:tracking-wide"
+                />
               </Link>
 
               {/* Hamburger Menu Toggle */}
@@ -306,7 +310,7 @@ export const HeroHeader = () => {
                 </button>
               )}
             </div>
-            
+
             {/* Desktop Nav */}
             <div className="hidden lg:block mx-auto">
               <ul className="flex gap-8 text-base">
@@ -331,18 +335,14 @@ export const HeroHeader = () => {
                   variant="outline"
                   size="sm"
                 >
-                  <Link href="/auth/login">
-                    <span>Login</span>
-                  </Link>
+                  <Link href="/auth/login">Login</Link>
                 </Button>
                 <Button
                   asChild
                   size="sm"
-                  className="bg-blue-600 text-primary-foreground px-5 text-base "
+                  className="bg-blue-600 text-primary-foreground px-5"
                 >
-                  <Link href="/auth/signup">
-                    <span>Sign Up</span>
-                  </Link>
+                  <Link href="/auth/signup">Sign Up</Link>
                 </Button>
               </div>
             ) : (

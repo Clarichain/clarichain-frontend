@@ -64,7 +64,7 @@ const LoginForm: React.FC = () => {
       className: "bg-green-500 text-white",
       position: "top-right",
     });
-    router.push("/dashboard");
+    router.replace("/dashboard");
   };
 
   return (
