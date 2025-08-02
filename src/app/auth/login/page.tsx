@@ -1,3 +1,4 @@
+"use client"
 import AuthFormLayout from "@/components/custom-ui/AuthForm";
 import LoginForm from "@/components/custom-ui/LoginForm";
 import Link from "next/link";
