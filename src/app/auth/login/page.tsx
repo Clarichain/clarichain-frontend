@@ -10,7 +10,7 @@ export default function SignInPage() {
         title="Sign in to your account"
         subtitle={
           <p className="mt-2 text-zinc-500 dark:text-zinc-400">
-            Don’t have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link
               href="/auth/signup"
               className="text-blue-600 dark:text-blue-400 hover:underline"
