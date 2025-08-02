@@ -335,14 +335,14 @@ export const HeroHeader = () => {
                   variant="outline"
                   size="sm"
                 >
-                  <Link href="/auth/login">Login</Link>
+                  <a href="/auth/login">Login</a>
                 </Button>
                 <Button
                   asChild
                   size="sm"
                   className="bg-blue-600 text-primary-foreground px-5"
                 >
-                  <Link href="/auth/signup">Sign Up</Link>
+                  <a href="/auth/signup">Sign Up</a>
                 </Button>
               </div>
             ) : (
@@ -373,18 +373,18 @@ export const HeroHeader = () => {
                 variant="outline"
                 size="sm"
               >
-                <Link href="/auth/login">
+                <a href="/auth/login">
                   <span>Login</span>
-                </Link>
+                </a>
               </Button>
               <Button
                 asChild
                 size="sm"
                 className="bg-blue-600 text-primary-foreground rounded-xl px-5 text-base"
               >
-                <Link href="/auth/signup">
+                <a href="/auth/signup">
                   <span>Sign Up</span>
-                </Link>
+                </a>
               </Button>
             </div>
           </div>
