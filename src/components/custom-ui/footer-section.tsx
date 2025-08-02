@@ -60,36 +60,36 @@ function Footer() {
           <div>
             <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
             <nav className="space-y-2 text-sm">
-              <a
+              <Link
                 href="#"
                 className="block transition-colors hover:text-primary"
               >
                 Home
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="block transition-colors hover:text-primary"
               >
                 About Us
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="block transition-colors hover:text-primary"
               >
                 Services
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="block transition-colors hover:text-primary"
               >
                 Products
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="block transition-colors hover:text-primary"
               >
                 Contact
-              </a>
+              </Link>
             </nav>
           </div>
           <div>
@@ -195,24 +195,24 @@ function Footer() {
             © 2024 ClariChain. All rights reserved.
           </p>
           <nav className="flex gap-4 text-sm">
-            <a
+            <Link
               href="#"
               className="transition-colors hover:text-primary"
             >
               Privacy Policy
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="transition-colors hover:text-primary"
             >
               Terms of Service
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="transition-colors hover:text-primary"
             >
               Cookie Settings
-            </a>
+            </Link>
           </nav>
         </div>
       </div>

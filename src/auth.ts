@@ -39,9 +39,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       },
     }),
   ],
-  pages: {
-    signIn: "/auth/signin",
-  },
   session: {
     strategy: "jwt",
   },

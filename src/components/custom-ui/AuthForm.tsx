@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { Button as ShadcnButtonComp } from "../ui/button";
 import { LogoWithText } from "./hero-section";
 import { InteractiveGridPattern } from "../magicui/interactive-grid-pattern";
+import Link from "next/link";
 
 type AuthFormLayoutProps = {
   children: React.ReactNode;
@@ -47,19 +48,19 @@ const AuthFormLayout: React.FC<AuthFormLayoutProps> = ({
 
         <p className="mt-9 text-xs text-zinc-500 dark:text-zinc-400">
           By signing in, you agree to our{" "}
-          <a
+          <Link
             href="#"
             className="text-blue-600 dark:text-blue-400"
           >
             Terms & Conditions
-          </a>{" "}
+          </Link>{" "}
           and{" "}
-          <a
+          <Link
             href="#"
             className="text-blue-600 dark:text-blue-400"
           >
             Privacy Policy
-          </a>
+          </Link>
           .
         </p>
       </motion.div>
