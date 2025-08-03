@@ -68,7 +68,8 @@ export function HeroSection() {
                     }}
                   >
                     <h1 className="mt-4 max-w-2xl text-balance text-4xl sm:text-5xl font-medium md:text-6xl lg:mt-8">
-                      Read, Break Down, and Sign Docs with AI
+                      Read, <span className="text-blue-600">Break Down,</span>{" "}
+                      and Sign Docs with AI
                     </h1>
                     <p className="mt-4 max-w-2xl text-pretty text-base md:text-lg">
                       Upload contracts, policies, or academic papers and get
